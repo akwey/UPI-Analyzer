@@ -64,16 +64,17 @@ export function SummaryCards({ dashboard, isLoading }: SummaryCardsProps) {
 
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-      {cards.map((card) => (
+      {cards.map((card, index) => (
         <div
           key={card.label}
-          className="rounded-xl2 bg-surface p-4 shadow-card border border-ink-300/30 hover:shadow-cardHover transition-shadow"
+          className="group relative overflow-hidden rounded-xl2 bg-surface p-4 shadow-card border border-ink-300/30 hover:shadow-cardHover hover:-translate-y-0.5 transition-all duration-200 animate-fade-in-up"
+          style={{ animationDelay: `${index * 50}ms` }}
         >
-          <div className={`flex h-9 w-9 items-center justify-center rounded-full ${card.iconBg}`}>
-            <card.icon size={18} className={card.iconText} />
+          <div className={`flex h-10 w-10 items-center justify-center rounded-full ${card.iconBg} ring-2 ring-white/50`}>
+            <card.icon size={18} className={card.iconText} strokeWidth={2.5} />
           </div>
-          <p className="mt-3 text-xs font-medium text-ink-500">{card.label}</p>
-          <p className={`font-display text-lg font-semibold ${card.valueColor ?? "text-ink-900"}`}>
+          <p className="mt-3 text-xs font-medium text-ink-500 uppercase tracking-wide">{card.label}</p>
+          <p className={`font-display text-lg font-bold mt-1 ${card.valueColor ?? "text-ink-900"}`}>
             {card.value}
           </p>
         </div>

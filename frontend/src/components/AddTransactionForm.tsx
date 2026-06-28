@@ -31,8 +31,8 @@ export function AddTransactionForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-1.5 sm:flex-row sm:items-start sm:gap-2">
-      <div className="flex-1">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-3">
+      <div className="flex-1 relative">
         <input
           {...register("message", {
             required: "Paste a transaction message to add it.",
@@ -42,17 +42,28 @@ export function AddTransactionForm() {
           placeholder="Paste a message, e.g. Paid Rs.250 to Zomato via UPI"
           aria-label="Raw transaction message"
           aria-invalid={Boolean(errors.message)}
-          className="w-full rounded-xl border border-ink-300/60 bg-white px-4 py-2.5 text-sm text-ink-900 placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-colors"
+          className="w-full rounded-xl border border-ink-300/60 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all duration-200 shadow-sm hover:shadow-md"
         />
-        {errors.message && <p className="mt-1 text-xs text-expense">{errors.message.message}</p>}
+        {errors.message && (
+          <p className="mt-1.5 text-xs text-expense flex items-center gap-1 animate-fade-in">
+            <span className="inline-block w-1 h-1 rounded-full bg-expense"></span>
+            {errors.message.message}
+          </p>
+        )}
       </div>
       <button
         type="submit"
         disabled={isPending}
-        className="flex shrink-0 items-center justify-center gap-2 rounded-xl bg-brand-500 px-4 py-2.5 text-sm font-medium text-white shadow-card hover:bg-brand-600 transition-colors disabled:opacity-60"
+        className="group flex shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-card hover:shadow-cardHover hover:from-brand-600 hover:to-brand-700 active:scale-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
       >
-        {isPending ? <Loader2 size={16} className="animate-spin" /> : <SendHorizontal size={16} />}
-        Add Transaction
+        {isPending ? (
+          <Loader2 size={16} className="animate-spin" />
+        ) : (
+          <>
+            <SendHorizontal size={16} className="group-hover:translate-x-0.5 transition-transform" />
+            <span>Add Transaction</span>
+          </>
+        )}
       </button>
     </form>
   );

@@ -47,8 +47,10 @@ export function TransactionFeed({
 
   return (
     <div className="space-y-3">
-      {transactions.map((transaction) => (
-        <TransactionCard key={transaction.id} transaction={transaction} />
+      {transactions.map((transaction, index) => (
+        <div key={transaction.id} className="animate-fade-in" style={{ animationDelay: `${index * 30}ms` }}>
+          <TransactionCard transaction={transaction} />
+        </div>
       ))}
     </div>
   );

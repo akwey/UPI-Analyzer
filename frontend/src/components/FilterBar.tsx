@@ -46,8 +46,10 @@ function Chip({
   return (
     <button
       onClick={onClick}
-      className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
-        active ? "bg-brand-500 text-white" : "bg-white text-ink-700 border border-ink-300/60 hover:border-brand-400"
+      className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all duration-200 ${
+        active
+          ? "bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-md shadow-brand-500/30 scale-105"
+          : "bg-white text-ink-700 border border-ink-300/60 hover:border-brand-400 hover:shadow-sm hover:scale-105"
       }`}
     >
       {label}
@@ -92,7 +94,7 @@ export function FilterBar({
           value={categoryFilter ?? ""}
           onChange={(event) => onCategoryFilterChange(event.target.value || null)}
           aria-label="Filter by category"
-          className="rounded-lg border border-ink-300/60 bg-white px-3 py-1.5 text-xs font-medium text-ink-700 focus:outline-none focus:ring-2 focus:ring-brand-200"
+          className="rounded-lg border border-ink-300/60 bg-white px-3 py-2 text-xs font-semibold text-ink-700 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 focus:shadow-sm transition-all duration-200 cursor-pointer hover:border-ink-300"
         >
           <option value="">All Categories</option>
           {CATEGORY_OPTIONS.map((category) => (
@@ -108,7 +110,7 @@ export function FilterBar({
             value={sortBy}
             onChange={(event) => onSortByChange(event.target.value as SortOption)}
             aria-label="Sort transactions"
-            className="rounded-lg border border-ink-300/60 bg-white px-3 py-1.5 text-xs font-medium text-ink-700 focus:outline-none focus:ring-2 focus:ring-brand-200"
+            className="rounded-lg border border-ink-300/60 bg-white px-3 py-2 text-xs font-semibold text-ink-700 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 focus:shadow-sm transition-all duration-200 cursor-pointer hover:border-ink-300"
           >
             {SORT_OPTIONS.map((option) => (
               <option key={option.value} value={option.value}>

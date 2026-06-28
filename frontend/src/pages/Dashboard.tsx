@@ -32,17 +32,17 @@ export function Dashboard() {
   const hasActiveFilters = Boolean(search || dateFilter || typeFilter || categoryFilter);
 
   return (
-    <div className="min-h-screen bg-canvas pb-16">
-      <header className="sticky top-0 z-10 border-b border-ink-300/30 bg-canvas/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-5xl items-center gap-2.5 px-4 py-4 sm:px-6">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-500 text-white">
-            <Wallet2 size={18} />
+    <div className="min-h-screen bg-gradient-to-br from-canvas via-canvas to-brand-50/30 pb-16">
+      <header className="sticky top-0 z-10 border-b border-ink-300/30 bg-canvas/80 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-4 sm:px-6">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-brand-600 text-white shadow-lg shadow-brand-500/30 ring-2 ring-white">
+            <Wallet2 size={20} strokeWidth={2.5} />
           </div>
           <div>
-            <h1 className="font-display text-lg font-semibold text-ink-900 leading-tight">
+            <h1 className="font-display text-lg font-bold text-ink-900 leading-tight tracking-tight">
               Smart UPI Analyzer
             </h1>
-            <p className="text-xs text-ink-500 leading-tight">Your spending, automatically organized</p>
+            <p className="text-xs text-ink-500 leading-tight mt-0.5">Your spending, automatically organized</p>
           </div>
         </div>
       </header>
