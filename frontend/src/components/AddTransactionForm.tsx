@@ -42,7 +42,7 @@ export function AddTransactionForm() {
           placeholder="Paste a message, e.g. Paid Rs.250 to Zomato via UPI"
           aria-label="Raw transaction message"
           aria-invalid={Boolean(errors.message)}
-          className="w-full rounded-xl border border-ink-300/60 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all duration-200 shadow-sm hover:shadow-md"
+          className="w-full rounded-xl border border-ink-300/60 bg-white px-4 py-3 text-xs text-ink-900 placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition-all duration-200 shadow-sm hover:shadow-md"
         />
         {errors.message && (
           <p className="mt-1.5 text-xs text-expense flex items-center gap-1 animate-fade-in">
@@ -54,7 +54,7 @@ export function AddTransactionForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="group flex shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-card hover:shadow-cardHover hover:from-brand-600 hover:to-brand-700 active:scale-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+        className="group flex shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 px-5 py-3 text-xs font-semibold text-white shadow-card hover:shadow-cardHover hover:from-brand-600 hover:to-brand-700 active:scale-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
       >
         {isPending ? (
           <Loader2 size={16} className="animate-spin" />

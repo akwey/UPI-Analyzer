@@ -41,7 +41,7 @@ export function AnalyticsHighlights({ analytics }: AnalyticsHighlightsProps) {
             </div>
             {item.label}
           </div>
-          <p className="mt-2.5 truncate font-display text-sm font-bold text-ink-900 leading-tight" title={item.value}>
+          <p className="mt-2.5 truncate font-display text-[12px] font-bold text-ink-900 leading-tight" title={item.value}>
             {item.value}
           </p>
         </div>

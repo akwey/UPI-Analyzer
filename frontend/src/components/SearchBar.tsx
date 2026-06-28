@@ -15,7 +15,7 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
         onChange={(event) => onChange(event.target.value)}
         placeholder="Search merchant, category, amount..."
         aria-label="Search transactions"
-        className="w-full rounded-xl border border-ink-300/60 bg-white py-2.5 pl-10 pr-10 text-sm text-ink-900 placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 focus:shadow-md transition-all duration-200"
+        className="w-full rounded-xl border border-ink-300/60 bg-white py-2.5 pl-10 pr-10 text-xs text-ink-900 placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 focus:shadow-md transition-all duration-200"
       />
       {value && (
         <button

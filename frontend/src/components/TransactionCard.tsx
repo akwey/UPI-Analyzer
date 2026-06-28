@@ -35,7 +35,7 @@ export function TransactionCard({ transaction }: TransactionCardProps) {
           </div>
           <div className="min-w-0 flex-1">
             <h3 className="font-display font-semibold text-ink-900 truncate text-[15px]">{transaction.merchant}</h3>
-            <p className="text-sm text-ink-500 truncate mt-0.5" title={transaction.description}>
+            <p className="text-xs text-ink-500 truncate mt-0.5" title={transaction.description}>
               {transaction.description}
             </p>
             <p className="text-xs text-ink-500 mt-1.5 flex items-center gap-1.5">
@@ -64,7 +64,7 @@ export function TransactionCard({ transaction }: TransactionCardProps) {
       </div>
 
       {transaction.cashback && (
-        <div className="mt-4 flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-50 to-green-50 px-3.5 py-2 text-sm font-semibold text-income border border-emerald-100/50 w-fit">
+        <div className="mt-4 flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-50 to-green-50 px-3.5 py-2 text-xs font-semibold text-income border border-emerald-100/50 w-fit">
           <div className="flex h-5 w-5 items-center justify-center rounded-full bg-income/10">
             <Gift size={12} className="text-income" />
           </div>

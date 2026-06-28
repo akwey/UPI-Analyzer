@@ -14,7 +14,7 @@ export function EmptyState({ icon: Icon = Inbox, title, description }: EmptyStat
       </div>
       <div className="space-y-1">
         <h3 className="font-display font-bold text-ink-900 text-base">{title}</h3>
-        <p className="max-w-sm text-sm text-ink-500 leading-relaxed">{description}</p>
+        <p className="max-w-sm text-xs text-ink-500 leading-relaxed">{description}</p>
       </div>
     </div>
   );
