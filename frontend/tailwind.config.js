@@ -42,6 +42,9 @@ export default {
         xl2: "1.25rem",
         xl3: "1.5rem",
       },
+      maxWidth: {
+        "5xl": "70rem",
+      },
       animation: {
         "fade-in": "fadeIn 0.3s ease-out",
         "fade-in-up": "fadeInUp 0.4s ease-out",

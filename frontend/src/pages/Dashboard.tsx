@@ -47,7 +47,7 @@ export function Dashboard() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-4 sm:px-6 space-y-6 pt-6">
+      <main className="mx-auto max-w-5xl px-4 sm:px-6 space-y-6 pt-4">
         <SummaryCards dashboard={dashboardQuery.data} isLoading={dashboardQuery.isLoading} />
 
         <Panel title="Add a Transaction" subtitle="Paste a raw UPI or bank SMS to parse it automatically">
